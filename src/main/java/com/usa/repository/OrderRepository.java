@@ -50,8 +50,8 @@ public class OrderRepository {
         return orderInterface.findByZone(zona);
     }
 
-    //Listado Ordenes de Producto x Vendedor
-    public List<Order>ordersSalesByID(Integer id){
+    //Listado Ordenes de Producto x Asesor
+    public List<Order>ordersSalesManByID(Integer id){
         Query query = new Query();
 
         Criteria criterio = Criteria.where("salesMan.id").is(id);
@@ -62,7 +62,7 @@ public class OrderRepository {
     }
 
     //Listado de Asesores x Estado
-    public List<Order>ordersSalesByState(String state, Integer id){
+    public List<Order>ordersSalesManByState(String state, Integer id){
         Query query = new Query();
 
         Criteria criterio = Criteria.where("salesMan.id").is(id).and("status").is(state);
@@ -73,7 +73,7 @@ public class OrderRepository {
     }
 
     //Listado Ordenes Asesor x Fecha
-    public List<Order>ordersSalesByDate(String dateStr, Integer id){
+    public List<Order>ordersSalesManByDate(String dateStr, Integer id){
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         Query query = new Query();
 

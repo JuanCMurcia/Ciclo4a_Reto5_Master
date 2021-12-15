@@ -5,6 +5,7 @@ import com.usa.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,5 +46,17 @@ public class UserRepository {
 
     public Optional<User>lastUserId(){
         return crudInterface.findTopByOrderByIdDesc();
+    }
+
+    public List<User>findDay(Date date){
+        return crudInterface.findByBirthtDay(date);
+    }
+
+    public List<User>birthtDayList(String monthBirthtDay){
+        return crudInterface.findByMonthBirthtDay(monthBirthtDay);
+    }
+
+    public List<User>findOneOrderId(){
+        return crudInterface.findOneByOrderByIdDesc();
     }
 }

@@ -5,6 +5,7 @@ import com.usa.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -110,6 +111,17 @@ public class UserService {
         } else {
             return usuario.get();
         }
+    }
 
+    public List<User>findDay(Date date){
+        return userRepository.findDay(date);
+    }
+
+    public List<User> birthtDayList(String monthBirthtDay){
+        return userRepository.birthtDayList(monthBirthtDay);
+    }
+
+    public List<User>findOneOrderId(){
+        return userRepository.findOneOrderId();
     }
 }

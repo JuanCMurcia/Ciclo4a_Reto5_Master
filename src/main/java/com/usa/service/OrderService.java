@@ -72,17 +72,17 @@ public class OrderService {
     }
 
     //Ordenes de Producto x Vendedor
-    public List<Order>ordesSalesByID(Integer id){
-        return orderRepository.ordersSalesByID(id);
+    public List<Order>ordersSalesManByID(Integer id){
+        return orderRepository.ordersSalesManByID(id);
     }
 
     //Ordenes de Asesores x Estado
-    public List<Order>ordesSalesByState(String state, Integer id){
-        return orderRepository.ordersSalesByState(state, id);
+    public List<Order>ordersSalesByManState(String state, Integer id){
+        return orderRepository.ordersSalesManByState(state, id);
     }
 
     //ordenes de Asesores x Fecha
-    public List<Order>ordesSalesByDate(String dateStr, Integer id){
-        return orderRepository.ordersSalesByDate(dateStr, id);
+    public List<Order>ordersSalesByManDate(String dateStr, Integer id){
+        return orderRepository.ordersSalesManByDate(dateStr, id);
     }
 }

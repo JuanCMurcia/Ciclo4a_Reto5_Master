@@ -49,21 +49,21 @@ public class OrderController {
         return orderService.findByZone(zona);
     }
 
-    //Productos x Vendedor
+    //Productos x Asesor
     @GetMapping("/salesman/{id}")
-    public List<Order>ordersSalesByID(@PathVariable("id")Integer id){
-        return orderService.ordesSalesByID(id);
+    public List<Order>ordersSalesManByID(@PathVariable("id")Integer id){
+        return orderService.ordersSalesManByID(id);
     }
 
     //Asesores x Estado
     @GetMapping("/state/{state}/{id}")
-    public List<Order>ordersSalesByState(@PathVariable("state")String state, @PathVariable("id")Integer id){
-        return orderService.ordesSalesByState(state, id);
+    public List<Order>ordersSalesManByState(@PathVariable("state")String state, @PathVariable("id")Integer id){
+        return orderService.ordersSalesByManState(state, id);
     }
 
     //Asesores x Date (Fecha)
     @GetMapping("/date/{registerDay}/{id}")
-    public List<Order>ordersSalesByDate(@PathVariable("registerDay")String dateStr, @PathVariable("id")Integer id){
-        return orderService.ordesSalesByDate(dateStr, id);
+    public List<Order>ordersSalesManByDate(@PathVariable("registerDay")String dateStr, @PathVariable("id")Integer id){
+        return orderService.ordersSalesByManDate(dateStr, id);
     }
 }

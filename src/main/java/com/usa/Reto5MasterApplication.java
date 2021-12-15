@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 
 @Component
 @SpringBootApplication
-public class Reto4MasterApplication implements CommandLineRunner {
+public class Reto5MasterApplication implements CommandLineRunner {
 
     @Autowired
     private UserInterface userInterface;
@@ -26,7 +26,7 @@ public class Reto4MasterApplication implements CommandLineRunner {
     private OrderInterface orderInterface;
 
     public static void main(String[] args) {
-        SpringApplication.run(Reto4MasterApplication.class, args);
+        SpringApplication.run(Reto5MasterApplication.class, args);
     }
 
     @Override
