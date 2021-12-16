@@ -50,4 +50,9 @@ public class ClotheController {
         return clotheService.findPrice(price);
     }
 
+    @GetMapping("/description/{calidad}")
+    public List<Clothe>findDescription(@PathVariable("calidad") String description){
+        return clotheService.findDescription(description);
+    }
+
 }

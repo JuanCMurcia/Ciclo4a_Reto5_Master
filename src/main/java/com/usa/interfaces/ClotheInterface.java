@@ -9,4 +9,6 @@ import java.util.List;
 public interface ClotheInterface extends MongoRepository<Clothe, String> {
 
     List<Clothe> findByPrice(Double price);
+
+    List<Clothe> findByDescription(String description);
 }

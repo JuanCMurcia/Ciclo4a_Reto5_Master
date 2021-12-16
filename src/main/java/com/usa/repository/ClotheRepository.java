@@ -37,4 +37,8 @@ public class ClotheRepository {
     public List<Clothe>findPrice(Double price){
         return crudInterface.findByPrice(price);
     }
+
+    public List<Clothe>findDescription(String description){
+        return crudInterface.findByDescription(description);
+    }
 }
