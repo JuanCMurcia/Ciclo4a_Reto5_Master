@@ -10,5 +10,5 @@ public interface ClotheInterface extends MongoRepository<Clothe, String> {
 
     List<Clothe> findByPrice(Double price);
 
-    List<Clothe> findByDescriptionLike(String description);
+    //List<Clothe> findByDescriptionLike(String description);
 }

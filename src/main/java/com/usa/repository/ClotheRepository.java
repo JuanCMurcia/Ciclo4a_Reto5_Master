@@ -44,12 +44,12 @@ public class ClotheRepository {
         return crudInterface.findByPrice(price);
     }
 
-    public List<Clothe>findByDescriptionLike(String description){
+    public List<Clothe>findByDescriptionLike(String keyword){
         Query query = new Query();
-        Criteria descriptionCriteria = Criteria.where("description").regex(".*"+description+".*","i");
+        Criteria keywordCriteria = Criteria.where("description").regex(".*"+keyword+".*","i");
 
-        query.addCriteria(descriptionCriteria);
+        query.addCriteria(keywordCriteria);
         List<Clothe> clothes = mongoTemplate.find(query, Clothe.class);
-        return crudInterface.findByDescriptionLike(description);
+        return clothes;
     }
 }

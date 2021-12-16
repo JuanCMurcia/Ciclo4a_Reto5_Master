@@ -78,7 +78,7 @@ public class ClotheService {
         return clotheRepository.findPrice(price);
     }
 
-    public List<Clothe>findDescription(String description){
-        return clotheRepository.findByDescriptionLike(description);
+    public List<Clothe>findDescription(String keyword){
+        return clotheRepository.findByDescriptionLike(keyword);
     }
 }
