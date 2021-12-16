@@ -33,4 +33,8 @@ public class ClotheRepository {
     public void delete(Clothe clothe) {
         crudInterface.delete(clothe);
     }
+
+    public List<Clothe>findPrice(Double price){
+        return crudInterface.findByPrice(price);
+    }
 }

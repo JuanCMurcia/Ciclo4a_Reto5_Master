@@ -44,4 +44,10 @@ public class ClotheController {
     public boolean delete(@PathVariable("reference") String reference) {
         return clotheService.delete(reference);
     }
+
+    @GetMapping("/price/{price}")
+    public List<Clothe>findPrice(@PathVariable("price") Double price){
+        return clotheService.findPrice(price);
+    }
+
 }

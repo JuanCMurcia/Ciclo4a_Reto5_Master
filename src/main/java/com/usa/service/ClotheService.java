@@ -73,4 +73,8 @@ public class ClotheService {
         }).orElse(false);
         return del;
     }
+
+    public List<Clothe>findPrice(Double price){
+        return clotheRepository.findPrice(price);
+    }
 }
