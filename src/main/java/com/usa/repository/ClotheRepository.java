@@ -3,6 +3,9 @@ package com.usa.repository;
 import com.usa.interfaces.ClotheInterface;
 import com.usa.model.Clothe;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,6 +16,9 @@ public class ClotheRepository {
 
     @Autowired
     private ClotheInterface crudInterface;
+
+    @Autowired
+    private MongoTemplate mongoTemplate;
 
     public List<Clothe> getAll() {
         return crudInterface.findAll();
@@ -38,7 +44,12 @@ public class ClotheRepository {
         return crudInterface.findByPrice(price);
     }
 
-    public List<Clothe>findDescription(String description){
-        return crudInterface.findByDescription(description);
+    public List<Clothe>findByDescriptionLike(String description){
+        Query query = new Query();
+        Criteria descriptionCriteria = Criteria.where("description").regex(".*"+description+".*","i");
+
+        query.addCriteria(descriptionCriteria);
+        List<Clothe> clothes = mongoTemplate.find(query, Clothe.class);
+        return crudInterface.findByDescriptionLike(description);
     }
 }
